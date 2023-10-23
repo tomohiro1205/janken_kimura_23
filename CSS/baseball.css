@@ -1,0 +1,133 @@
+body{
+    margin-top:130px;
+    padding:0;
+    text-align:left;
+    background-image: url("/img/field2.jpeg");
+    background-size: 100%;
+    background-color: rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+.douga{
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+}
+
+
+header{
+    overflow: hidden;
+    
+}             
+
+.animation-container svg{
+    width: 90%;
+    display: block;
+    top:25%;
+    margin:  -8% 0 0 5%;
+    position: absolute;
+}        
+
+.animation-container svg .text{
+    font-weight: 100;
+    opacity: 1;
+    font-size: 4em;
+    width: 100%;
+    fill: transparent;
+    stroke-width: 3;
+    stroke-linejoin: round;
+    stroke-dasharray: 90,310;
+    stroke-dashoffset: 0;
+    -webkit-animation: text 8s infinite linear;
+    animation: text 8s infinite linear;
+}        
+
+.animation-container svg .text:nth-child(4n+1){
+    stroke: red;
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+}
+
+.animation-container svg .text:nth-child(4n+2){
+    stroke: blue;
+    -webkit-animation-delay: -4s;
+    animation-delay: -4s;
+}
+
+.animation-container svg .text:nth-child(4n+3){
+    stroke: orange;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s;
+}
+
+.animation-container svg .text:nth-child(4n+4){
+    stroke: green;
+    -webkit-animation-delay: -8s;
+    animation-delay: -8s;
+}
+        
+        @-webkit-keyframes text{
+            100% {
+                stroke-dashoffset: -400;
+            }   
+        }
+
+main{
+    font-size: 32px;
+    border-bottom:1px solid #ccc;
+    .batter {
+        text-align: center;     
+    }   
+    .kati {
+        text-align: center;
+    }
+    .douga {
+        width:10%;
+        height: auto;
+        position: absolute;
+        top:100;
+        left:50px;
+        
+        
+    }
+}
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%; 
+}
+
+li{
+    text-align: center;
+    font-weight: bold;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+    background-image: url("/js01/kadai/img/野球ボール.jpeg");
+    background-position: center;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode:lighten;
+}
+
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+
