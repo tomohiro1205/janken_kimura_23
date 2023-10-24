@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="./js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="./CSS/baseball.css">
+<title>ピッチングゲーム</title>
+<link rel="shortcut icon" href="./img/favicon.png">
+</head>
+<body>    
+<!-- タイトル     -->
+<header class="animation-container">
+    <svg viewBox="0 0 1000 100">
+    <symbol id="text">
+        <text text-anchor="middle" x="50%" y="70%">ピッチングゲーム</text>
+    </symbol>
+    <use xlink:href="#text" class="text"></use> 
+    <use xlink:href="#text" class="text"></use>
+    <use xlink:href="#text" class="text"></use>
+    <use xlink:href="#text" class="text"></use>    
+    </svg>
+    </header>
+<main>
+<!-- 球種     -->
+  <ul> 
+    <li id="streight">ストレート</li>
+    <li id="slider">スライダー</li>
+    <li id="carve">カーブ</li>
+    <li id="fork">フォーク</li>
+    <li id="shoot">シュート</li>
+  </ul> 
+  <!-- バッターの予想 -->
+  <div class = "batter">バッターの予想配球は？「<span id="pc_hands">どこ？</span>」
+    バッターの動きは？「<span2 id="movement">なに？</span2>」
+  </div>
+  <div class = "kati">ボールの行方は？ 「<span3 id="judgment">どうなった？？</span3>」
+  </div>
+
+    
+ 
+</main>
+<footer></footer>
+<script>
+//野球用のSCRIPTを書いてください
+// ストレート   
+$("#streight").on("click",function(){
+    const num  = Math.random();  //小数点乱数
+    const r = Math.ceil(num * 5);   //繰り上げ
+    if(r==1){
+        $("#pc_hands").html("ストレート");
+    }else if(r==2){
+        $("#jpc_hands").html("スライダー");
+    } else if(r==3){
+        $("#pc_hands").html("カーブ");            
+    }else if(r==4){
+        $("#pc_hands").html("フォーク");
+    }else if(r==5){
+        $("#pc_hands").html("シュート");
+    }
+    const num1  = Math.random();  //小数点乱数
+    const s = Math.ceil(num1 * 3);   //繰り上げ
+    if(s==1 ){
+        $("#movement").html("見送り");
+        $("#judgment").html("ミットへ収まる");    
+    }else if(s==2){
+        $("#movement").html("デッドボール");               
+        const num2  = Math.random();  //小数点乱数
+        const t = Math.ceil(num2 * 3);   //繰り上げ
+        if(t==1){
+            $("#judgment").html("黙って一塁へ行く！");  
+        }else if(t==2){
+            $("#judgment").html("痛みでうずくまる・・・");
+        }else if(t==3){
+            $("#judgment").html("バットを投げ捨てて向かってきた！！！");
+        }
+    }else if(s==3){
+        $("#movement").html("打つ");
+        if(r==1){
+            $("#judgment").html("ホームラン");
+            $("home-run").get(0).play();
+        }else if(r==2){
+            $("#judgment").html("ツーベースヒット");
+        }else if(r==3){
+            $("#judgment").html("三振");            
+        }else if(r==4){
+            $("#judgment").html("ゴロアウト");
+        }else if(r==5){
+            $("#judgment").html("ヒット"); 
+        }
+    }
+});                     
+// スライダー                    
+$("#slider").on("click",function(){
+    const num  = Math.random();  //小数点乱数
+    const r = Math.ceil(num * 5);   //繰り上げ
+    if(r==1){
+        $("#pc_hands").html("ストレート");
+    }else if(r==2){
+        $("#jpc_hands").html("スライダー");
+    } else if(r==3){
+        $("#pc_hands").html("カーブ");            
+    }else if(r==4){
+        $("#pc_hands").html("フォーク");
+    }else if(r==5){
+        $("#pc_hands").html("シュート");
+    }
+    const num1  = Math.random();  //小数点乱数
+    const s = Math.ceil(num1 * 3);   //繰り上げ
+    if(s==1 ){
+        $("#movement").html("見送り");
+        $("#judgment").html("ミットへ収まる");    
+    }else if(s==2){
+        $("#movement").html("デッドボール");               
+        const num2  = Math.random();  //小数点乱数
+        const t = Math.ceil(num2 * 3);   //繰り上げ
+        if(t==1){
+            $("#judgment").html("黙って一塁へ行く！");  
+        }else if(t==2){
+            $("#judgment").html("痛みでうずくまる・・・");
+        }else if(t==3){
+            $("#judgment").html("バットを投げ捨てて向かってきた！！！");
+        }
+    }else if(s==3){
+        $("#movement").html("打つ");
+        if(r==1){
+            $("#judgment").html("ヒット");
+        }else if(r==2){
+            $("#judgment").html("ホームラン");
+        }else if(r==3){
+            $("#judgment").html("ゴロアウト");            
+        }else if(r==4){
+            $("#judgment").html("ツーベースヒット");
+        }else if(r==5){
+            $("#judgment").html("三振"); 
+        }
+    }
+});                      
+// カーブ
+$("#carve").on("click",function(){
+    const num  = Math.random();  //小数点乱数
+    const r = Math.ceil(num * 5);   //繰り上げ
+    if(r==1){
+        $("#pc_hands").html("ストレート");
+    }else if(r==2){
+        $("#jpc_hands").html("スライダー");
+    } else if(r==3){
+        $("#pc_hands").html("カーブ");            
+    }else if(r==4){
+        $("#pc_hands").html("フォーク");
+    }else if(r==5){
+        $("#pc_hands").html("シュート");
+    }
+    const num1  = Math.random();  //小数点乱数
+    const s = Math.ceil(num1 * 3);   //繰り上げ
+    if(s==1 ){
+        $("#movement").html("見送り");
+        $("#judgment").html("ミットへ収まる");    
+    }else if(s==2){
+        $("#movement").html("デッドボール");               
+        const num2  = Math.random();  //小数点乱数
+        const t = Math.ceil(num2 * 3);   //繰り上げ
+        if(t==1){
+            $("#judgment").html("黙って一塁へ行く！");  
+        }else if(t==2){
+            $("#judgment").html("痛みでうずくまる・・・");
+        }else if(t==3){
+            $("#judgment").html("バットを投げ捨てて向かってきた！！！");
+        }
+    }else if(s==3){
+        $("#movement").html("打つ");
+        if(r==1){
+            $("#judgment").html("ゴロアウト");
+        }else if(r==2){
+            $("#judgment").html("三振");
+        }else if(r==3){
+            $("#judgment").html("ホームラン");            
+        }else if(r==4){
+            $("#judgment").html("ヒット");
+        }else if(r==5){
+            $("#judgment").html("ツーベースヒット"); 
+        }
+    }
+});                      
+// フォーク
+$("#fork").on("click",function(){
+    const num  = Math.random();  //小数点乱数
+    const r = Math.ceil(num * 5);   //繰り上げ
+    if(r==1){
+        $("#pc_hands").html("ストレート");
+    }else if(r==2){
+        $("#jpc_hands").html("スライダー");
+    } else if(r==3){
+        $("#pc_hands").html("カーブ");            
+    }else if(r==4){
+        $("#pc_hands").html("フォーク");
+    }else if(r==5){
+        $("#pc_hands").html("シュート");
+    }
+    const num1  = Math.random();  //小数点乱数
+    const s = Math.ceil(num1 * 3);   //繰り上げ
+    if(s==1 ){
+        $("#movement").html("見送り");
+        $("#judgment").html("ミットへ収まる");    
+    }else if(s==2){
+        $("#movement").html("デッドボール");               
+        const num2  = Math.random();  //小数点乱数
+        const t = Math.ceil(num2 * 3);   //繰り上げ
+        if(t==1){
+            $("#judgment").html("黙って一塁へ行く！");  
+        }else if(t==2){
+            $("#judgment").html("痛みでうずくまる・・・");
+        }else if(t==3){
+            $("#judgment").html("バットを投げ捨てて向かってきた！！！");
+        }
+    }else if(s==3){
+        $("#movement").html("打つ");
+        if(r==1){
+            $("#judgment").html("三振");
+        }else if(r==2){
+            $("#judgment").html("ヒット");
+        }else if(r==3){
+            $("#judgment").html("ツーベースヒット");            
+        }else if(r==4){
+            $("#judgment").html("ホームラン");
+        }else if(r==5){
+            $("#judgment").html("ゴロアウト"); 
+        }
+    }
+});                      
+// シュート      
+$("#shoot").on("click",function(){
+    const num  = Math.random();  //小数点乱数
+    const r = Math.ceil(num * 5);   //繰り上げ
+    if(r==1){
+        $("#pc_hands").html("ストレート");
+    }else if(r==2){
+        $("#jpc_hands").html("スライダー");
+    } else if(r==3){
+        $("#pc_hands").html("カーブ");            
+    }else if(r==4){
+        $("#pc_hands").html("フォーク");
+    }else if(r==5){
+        $("#pc_hands").html("シュート");
+    }
+    const num1  = Math.random();  //小数点乱数
+    const s = Math.ceil(num1 * 3);   //繰り上げ
+    if(s==1 ){
+        $("#movement").html("見送り");
+        $("#judgment").html("ミットへ収まる");    
+    }else if(s==2){
+        $("#movement").html("デッドボール");               
+        const num2  = Math.random();  //小数点乱数
+        const t = Math.ceil(num2 * 3);   //繰り上げ
+        if(t==1){
+            $("#judgment").html("黙って一塁へ行く！");  
+        }else if(t==2){
+            $("#judgment").html("痛みでうずくまる・・・");
+        }else if(t==3){
+            $("#judgment").html("バットを投げ捨てて向かってきた！！！");
+        }
+    }else if(s==3){
+        $("#movement").html("打つ");
+        if(r==1){
+            $("#judgment").html("ツーベースヒット");
+        }else if(r==2){
+            $("#judgment").html("ゴロアウト");
+        }else if(r==3){
+            $("#judgment").html("ヒット");            
+        }else if(r==4){
+            $("#judgment").html("三振");
+        }else if(r==5){
+            $("#judgment").html("ホームラン"); 
+        }
+    }
+});                      
+</script>
+</body>
+</html>
